@@ -5,13 +5,13 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 function Navigasi() {
   return (
     <>
-      <div className="text-center text-light bg-primary">
-        Tugas PT. Vanz Inovatif Teknologi
-      </div>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      {/* <div className="text-center text-light bg-secondary"> */}
+        {/* Tugas PT. Vanz Inovatif Teknologi */}
+      {/* </div> */}
+      <Navbar bg="light" variant="light" expand="lg" sticky="top">
         <Container>
           <img src={logo} className="App-logo" alt="logo" />
-          <Navbar.Brand href="/">Husnil Maarif</Navbar.Brand>
+          <Navbar.Brand href="/" className="brand">Husnil Maarif</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
