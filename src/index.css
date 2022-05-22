@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Montserrat", sans-serif !important;
-  background-color: whitesmoke;
+  background-color: whitesmoke !important;
 }
 
 code {

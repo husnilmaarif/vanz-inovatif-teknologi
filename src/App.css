@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+/* navigasi */
+.brand {
+  font-size: 45px !important;
+}
+
 /* homepage */
 .header-homepage {
   background-image: url('https://cdn.pixabay.com/photo/2017/08/10/02/05/tiles-shapes-2617112_1280.jpg');
@@ -30,9 +35,9 @@
   z-index: 3;
 }
 
-/* navigasi */
-.brand {
-  font-size: 45px !important;
+.kolom-halaman {
+  border-right: 3px solid gray;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
