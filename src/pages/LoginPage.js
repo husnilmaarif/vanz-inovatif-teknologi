@@ -25,7 +25,7 @@ function LoginPage() {
           <div className="col-md-4">
             <h1 className="text-center">Login</h1>
 
-            <form className="mt-3">
+            <form className="mt-3" onSubmit={login}>
               <input
                 type="email"
                 placeholder="email"
@@ -42,7 +42,7 @@ function LoginPage() {
               />
               <button
                 className="btn btn-primary mt-3 mb-3 w-100 text-center"
-                onClick={login}
+                type="submit"
               >
                 Kirim
               </button>

@@ -10,7 +10,7 @@ function AboutPage() {
         </div>
       </div>
 
-      <div className="container mt-4 p-5 border border-dark my-4">
+      <div className="container p-5 border border-dark my-4">
         <div className="row">
           <div className="col-md-5 text-center">
             <img src={profile} alt="profile" className="w-75 mb-3" />

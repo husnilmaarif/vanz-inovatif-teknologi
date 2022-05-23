@@ -1,22 +1,32 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function RegisterPage() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
 
-  function register() {
+  function register(e) {
     if (cpassword !== password) {
       alert("Passwords not matched!");
     } else {
-      const user = {
-        name,
-        email,
-        password,
-      };
-      console.log(user);
+      e.preventDefault();
+
+      // login firebase auth
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          alert("Registrasi berhasil");
+          const user = userCredential.user;
+          console.log("success: ", user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
     }
   }
 
@@ -33,37 +43,30 @@ function RegisterPage() {
             <h1 className="text-center">Registrasi</h1>
             <form className="mt-3 text-center">
               <input
-                type="text"
-                placeholder="name"
-                className="form-control mt-2"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
                 type="email"
                 placeholder="email"
                 className="form-control mt-2"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                // onChange={(e) => setEmail(e.target.value)}
+                onChange={(data) => setEmail(data.target.value)}
               />
               <input
                 type="password"
                 placeholder="password"
                 className="form-control mt-2"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                // onChange={(e) => setPassword(e.target.value)}
+                onChange={(data) => setPassword(data.target.value)}
               />
               <input
                 type="password"
                 placeholder="confirm password"
                 className="form-control mt-2"
                 value={cpassword}
-                onChange={(e) => setCpassword(e.target.value)}
+                // onChange={(e) => setCpassword(e.target.value)}
+                onChange={(data) => setCpassword(data.target.value)}
               />
-              <button
-                className="btn btn-primary mt-3 mb-3 w-100"
-                onClick={register}
-              >
+              <button className="btn btn-primary mt-3 mb-3 w-100" onClick={register}>
                 Kirim
               </button>
               <br />
