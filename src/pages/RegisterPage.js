@@ -47,26 +47,26 @@ function RegisterPage() {
                 placeholder="email"
                 className="form-control mt-2"
                 value={email}
-                // onChange={(e) => setEmail(e.target.value)}
-                onChange={(data) => setEmail(data.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="password"
                 className="form-control mt-2"
                 value={password}
-                // onChange={(e) => setPassword(e.target.value)}
-                onChange={(data) => setPassword(data.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="confirm password"
                 className="form-control mt-2"
                 value={cpassword}
-                // onChange={(e) => setCpassword(e.target.value)}
-                onChange={(data) => setCpassword(data.target.value)}
+                onChange={(e) => setCpassword(e.target.value)}
               />
-              <button className="btn btn-primary mt-3 mb-3 w-100" onClick={register}>
+              <button
+                className="btn btn-primary mt-3 mb-3 w-100"
+                onClick={register}
+              >
                 Kirim
               </button>
               <br />
