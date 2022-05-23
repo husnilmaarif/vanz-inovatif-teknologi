@@ -74,7 +74,7 @@ function AboutPage() {
                 <li>High attention to detail</li>
                 <li>Analitycal and reasoning skills</li>
                 <li>Problem solving</li>
-                <li>Able to work collaborativel</li>
+                <li>Able to work collaboratively</li>
               </ul>
             </div>
           </div>

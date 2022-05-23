@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../logo.svg";
+import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
@@ -10,7 +10,9 @@ function Navigasi() {
         <Container>
           <img src={logo} className="App-logo" alt="logo" />
           <Navbar.Brand className="brand">
-            <Link to="/" className="brand">Husnil Maarif</Link>
+            <Link to="/" className="brand">
+              Husnil Maarif
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
