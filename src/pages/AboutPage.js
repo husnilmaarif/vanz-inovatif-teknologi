@@ -10,16 +10,16 @@ function AboutPage() {
         </div>
       </div>
 
-      <div className="container mt-4 p-5 border border-dark m-5">
+      <div className="container mt-4 p-5 border border-dark my-4">
         <div className="row">
-          <div className="col-md-4 text-center">
-            <img src={profile} alt="profile" className="w-100 mb-3" />
+          <div className="col-md-5 text-center">
+            <img src={profile} alt="profile" className="w-75 mb-3" />
             <h4>Husnil Maarif</h4>
             <h6>
               <i>ReactJs Developer</i>
             </h6>
           </div>
-          <div className="col-md-8 p-5">
+          <div className="col-md-7 p-3">
             <div className="row">
               <h4>About Me</h4>
               <p>
@@ -91,15 +91,21 @@ function AboutPage() {
               <a href="https://github.com/husnilmaarif/food-ordering">
                 https://github.com/husnilmaarif/food-ordering
               </a>
-              <h6 className="mt-2">CNBC Indonesia</h6>
+              <h6 className="mt-2">
+                CNBC Indonesia: React, Bootstrap, Javascript, Ajax
+              </h6>
               <a href="https://github.com/husnilmaarif/cnbc-indonesia">
                 https://github.com/husnilmaarif/cnbc-indonesia
               </a>
-              <h6 className="mt-2">Product CRUD</h6>
+              <h6 className="mt-2">
+                Product CRUD: React, Node, Express, MySql
+              </h6>
               <a href="https://github.com/husnilmaarif/crud-produk">
                 https://github.com/husnilmaarif/crud-produk
               </a>
-              <h6 className="mt-2">News App</h6>
+              <h6 className="mt-2">
+                News App: Bootstrap, Javascript, Asynchronous, Fetch API
+              </h6>
               <a href="https://github.com/husnilmaarif/news-app">
                 https://github.com/husnilmaarif/news-app
               </a>
