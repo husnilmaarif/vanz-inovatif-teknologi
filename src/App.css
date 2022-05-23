@@ -10,6 +10,13 @@
 /* navigasi */
 .brand {
   font-size: 45px !important;
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.link-navigasi {
+  text-decoration: none;
+  color: black
 }
 
 /* homepage */

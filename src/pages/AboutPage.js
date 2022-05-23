@@ -5,10 +5,10 @@ function AboutPage() {
   return (
     <>
       <div className="row">
-          <div className="col-md-5 bg-primary text-light text-center">
-            About Page
-          </div>
+        <div className="col-md-5 bg-primary text-light text-center">
+          About Page
         </div>
+      </div>
 
       <div className="container mt-4 p-5 border border-dark m-5">
         <div className="row">
@@ -36,6 +36,7 @@ function AboutPage() {
                 https://github.com/husnilmaarif
               </a>
               <br />
+              <br />
               <h4>LinkedIn</h4>
               <a href="https://www.linkedin.com/in/husnil-maarif-481312228">
                 https://www.linkedin.com/in/husnil-maarif-481312228
@@ -47,7 +48,7 @@ function AboutPage() {
         <hr />
         <br />
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-5">
             <div className="p-2">
               <h4>Education</h4>
               <h6>SMA-IT Al-Ishlah Maros (2015 - 2018)</h6>
@@ -70,15 +71,48 @@ function AboutPage() {
               </ul>
               <h6>Soft Skill</h6>
               <ul>
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <li>High attention to detail</li>
+                <li>Analitycal and reasoning skills</li>
+                <li>Problem solving</li>
+                <li>Able to work collaborativel</li>
               </ul>
             </div>
           </div>
-          <div className="col-md-8"></div>
+          <div className="col-md-7">
+            <div className="p-2">
+              <h4>Project Experience</h4>
+              <h6>Participant Re-Cloud Challenges 2022</h6>
+              <ul>
+                <li>Low code development competition</li>
+              </ul>
+              <br />
+              <h4>Personal Project</h4>
+              <h6>Food Ordering: React, Redux, Node, Express, Mongodb</h6>
+              <a href="https://github.com/husnilmaarif/food-ordering">
+                https://github.com/husnilmaarif/food-ordering
+              </a>
+              <h6 className="mt-2">CNBC Indonesia</h6>
+              <a href="https://github.com/husnilmaarif/cnbc-indonesia">
+                https://github.com/husnilmaarif/cnbc-indonesia
+              </a>
+              <h6 className="mt-2">Product CRUD</h6>
+              <a href="https://github.com/husnilmaarif/crud-produk">
+                https://github.com/husnilmaarif/crud-produk
+              </a>
+              <h6 className="mt-2">News App</h6>
+              <a href="https://github.com/husnilmaarif/news-app">
+                https://github.com/husnilmaarif/news-app
+              </a>
+            </div>
+            <div className="p-2 mt-5">
+              <h4>Language</h4>
+              <ul>
+                <li>Bahasa: Proficient</li>
+                <li>English: Intermediate</li>
+                <li>Arabic: Elementary</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
