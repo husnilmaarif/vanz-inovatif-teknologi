@@ -6,7 +6,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 function Navigasi() {
   return (
     <>
-      <Navbar bg="light" variant="light" expand="lg" sticky="top">
+      <Navbar bg="light" variant="light" expand="lg" sticky="top" className="shadow">
         <Container>
           <img src={logo} className="App-logo" alt="logo" />
           <Navbar.Brand className="brand">

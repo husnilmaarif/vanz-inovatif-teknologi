@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import AddNote from "../components/AddNote";
 
 function PostingPage() {
   return (
@@ -9,29 +9,9 @@ function PostingPage() {
           Posting Page
         </div>
 
-        <div className="container mt-4">
-          <div className="row">
-            <div className="col">
-              <Form>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Judul</Form.Label>
-                  <Form.Control type="text" placeholder="Kegiatan hari ini" />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="Tuliskan apa pun yang akan anda buat"
-                >
-                  <Form.Label>Teks</Form.Label>
-                  <Form.Control as="textarea" rows={3} />
-                  <Button variant="primary" className="w-100">
-                    Post
-                  </Button>
-                </Form.Group>
-              </Form>
-            </div>
+        <div className="container">
+          <div className="row justify-content-center mt-5">
+            <AddNote />
           </div>
         </div>
       </div>

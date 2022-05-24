@@ -22,7 +22,7 @@ function LoginPage() {
       </div>
       <div className="container">
         <div className="row justify-content-center my-5">
-          <div className="col-md-4">
+          <div className="col-md-4 text-center p-5 shadow bg-light">
             <h1 className="text-center">Login</h1>
 
             <form className="mt-3">
