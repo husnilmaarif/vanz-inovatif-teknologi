@@ -1,6 +1,6 @@
 import React from "react";
-import AddNote from "../components/AddNote";
-import ShowNote from "../components/ShowNote";
+import AddList from "../components/AddList";
+import ShowList from "../components/ShowList";
 
 function PostingPage() {
   return (
@@ -12,11 +12,11 @@ function PostingPage() {
 
         <div className="container">
           <div className="row justify-content-center my-5">
-            <AddNote />
+            <AddList />
           </div>
 
           <div className="row justify-content-center mt-3 mb-5">
-            <ShowNote />
+            <ShowList />
           </div>
         </div>
       </div>
