@@ -8,8 +8,18 @@ const listSlice = createSlice({
     addList: (state, action) => {
       state.value.push(action.payload);
     },
+    // updateList: (state, action) => {
+    //   state.value.map((user) => {
+    //     if (user.id === action.payload.id) {
+    //       user.username = action.payload.username;
+    //     }
+    //   });
+    // },
+    deleteList: (state, action) => {
+      state.value = state.value.filter((user) => user.id !== action.payload.id);
+    },
   },
 });
 
-export const { addList } = listSlice.actions;
+export const { addList, deleteList } = listSlice.actions; // updateList
 export default listSlice.reducer;

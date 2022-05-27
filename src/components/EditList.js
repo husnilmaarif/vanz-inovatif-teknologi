@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 function EditList() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <>
