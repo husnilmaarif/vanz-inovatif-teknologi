@@ -1,18 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { listData } from "../listData";
 
 const listSlice = createSlice({
-  name: "list",
-  initialState: {
-    title: "",
-    content: "",
-  },
+  name: "lists",
+  initialState: { value: listData },
   reducers: {
-    update: (state, action) => {
-      state.title = action.payload.title;
-      state.content = action.payload.content;
+    addList: (state, action) => {
+      state.value.push(action.payload);
     },
   },
 });
 
-export const { update } = listSlice.actions;
+export const { addList } = listSlice.actions;
 export default listSlice.reducer;

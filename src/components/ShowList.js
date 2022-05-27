@@ -2,15 +2,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function ShowList() {
-  const { title, content } = useSelector((state) => state.list);
+  const noteList = useSelector((state) => state.lists.value);
 
   return (
     <>
-      <div className="col-md-5 text-center p-5 shadow bg-light">
-        <h4>{title}</h4>
-        <hr />
-        <p>{content}</p>
-      </div>
+      {noteList.map((list) => {
+        return (
+          <div className="col-md-6 m-2 p-4 shadow">
+            <h1>{list.title}</h1>
+            <p>{list.content}</p>
+          </div>
+        );
+      })}
     </>
   );
 }

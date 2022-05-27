@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addList } from "../features/listSlice";
 
-function AddList() {
+function EditList() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addList({ id: 0, title, content }));
-  };
-
   return (
     <>
-      <div className="col-md-6 text-center shadow p-4 bg-light">
-        <Form onSubmit={handleSubmit}>
+      <div className="col-md-5 text-center ">
+        <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>JUDUL</Form.Label>
             <Form.Control
@@ -39,7 +33,7 @@ function AddList() {
               onChange={(e) => setContent(e.target.value)}
             />
             <Button type="submit" variant="primary" className="w-100 mt-5">
-              Post
+              Update
             </Button>
           </Form.Group>
         </Form>
@@ -48,4 +42,4 @@ function AddList() {
   );
 }
 
-export default AddList;
+export default EditList;
