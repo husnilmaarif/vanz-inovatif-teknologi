@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
@@ -10,11 +11,14 @@ function AddList() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title && !content) {
+    if (title && content) {
+      alert("Data berhasil ditambahkan");
+      dispatch(addList({ id: nanoid(), title, content }));
+    } else if (!title || !content) {
       return alert("judul dan konten tidak boleh kosong!");
     }
-    alert("Data berhasil ditambahkan");
-    dispatch(addList({ id: 1, title, content }));
+    setTitle("");
+    setContent("");
   };
 
   return (

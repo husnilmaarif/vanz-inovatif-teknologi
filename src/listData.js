@@ -1,7 +1,7 @@
 export const listData = [
   {
     id: 1,
-    title: "title",
+    title: "Title",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing,",
   },
 ];
