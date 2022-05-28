@@ -10,7 +10,11 @@ function AddList() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addList({ id: 0, title, content }));
+    if (!title && !content) {
+      return alert("judul dan konten tidak boleh kosong!");
+    }
+    alert("Data berhasil ditambahkan");
+    dispatch(addList({ id: 1, title, content }));
   };
 
   return (
@@ -30,7 +34,7 @@ function AddList() {
             className="mb-3"
             controlId="Tuliskan apa pun yang akan anda buat"
           >
-            <Form.Label>CATATAN</Form.Label>
+            <Form.Label>KONTEN</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}

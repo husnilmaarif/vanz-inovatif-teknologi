@@ -6,6 +6,17 @@ function ShowList() {
   const dispatch = useDispatch();
   const noteList = useSelector((state) => state.lists.value);
 
+  if (!noteList) {
+    return (
+      <div
+        className="justify-content-center m-5"
+        style={{ backgroundColor: "pink" }}
+      >
+        <h1>Daftar masih kosong</h1>
+      </div>
+    );
+  }
+
   return (
     <>
       {noteList.map((list) => {
