@@ -11,7 +11,7 @@ import Navigasi from "./components/Navigasi";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PostingPage from "./pages/PostingPage";
-// import EditList from "./components/EditList";
+import EditList from "./components/EditList";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 
@@ -20,10 +20,10 @@ function App() {
     <Router>
       <Navigasi />
       <Routes>
-        <Route path="/" exact element={<HomePage />} />
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/posting" element={<PostingPage />} />
-        {/* <Route path="/edit/:id" element={<EditList />} /> */}
+        <Route path="/edit/:id" element={<EditList />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
