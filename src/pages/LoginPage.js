@@ -15,6 +15,7 @@ function LoginPage() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        alert("Berhasil masuk");
         const user = userCredential.user;
         console.log("success ", user);
         navigate("/");
@@ -22,7 +23,7 @@ function LoginPage() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // alert("errorMessage");
+        alert("errorMessage");
         console.log(errorCode, errorMessage);
       });
   }

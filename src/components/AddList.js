@@ -11,8 +11,8 @@ function AddList() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // posting konten
     if (title && content) {
+      // posting konten
       alert("Data berhasil ditambahkan");
       dispatch(addList({ id: nanoid(), title, content }));
     } else if (!title || !content) {
