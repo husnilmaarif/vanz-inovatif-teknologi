@@ -1,9 +1,24 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import { Link } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
 
 function Navigasi() {
+  const navigate = useNavigate();
+
+  // loguot
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error.code, error.message);
+      });
+  };
+
   return (
     <>
       <Navbar
@@ -43,6 +58,9 @@ function Navigasi() {
                   Login
                 </Link>
               </Nav.Link>
+            <Button className="text-light justify-content-center btn-danger" onClick={logout}>
+              Logout
+            </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

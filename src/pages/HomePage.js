@@ -1,31 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import homepage from "../assets/homepage.png";
 import about from "../assets/about.png";
 import posting from "../assets/posting.png";
 import login from "../assets/login.png";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function HomePage() {
+  const [email, setEmail] = useState('')
   const navigate = useNavigate();
 
   useEffect(() => {
-    // authentikasi harus login sebelum posting sesuatu
-    const user = auth.currentUser;
-    if (!user) {
-      // arahkan ke halaman login
-      // alert(
-      //   "Silahkan login terlebih dahulu, agar segala perubahan tersimpan sebagai data anda"
-      // );
-      navigate("/login");
-    }
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        setEmail(user.email)
+      } else {
+        navigate("/login");
+      }
+    });
   });
 
   return (
     <>
       <div className="container-fluid d-flex header-homepage justify-content-center align-items-center">
         <button className="text-light greeting btn-primary p-2">
-          Selamat Datang
+          Selamat Datang {email}
         </button>
       </div>
 
