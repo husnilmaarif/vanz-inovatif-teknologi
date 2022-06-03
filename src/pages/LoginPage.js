@@ -1,32 +1,58 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { auth } from "../config/firebase";
+import google from "../assets/search.png";
+
+const provider = new GoogleAuthProvider();
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  function login(e) {
+  const login = (e) => {
     e.preventDefault();
 
-    // login firebase auth
+    // login menggunakan email dan password
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
+        // berhasil
         alert("Berhasil masuk");
         const user = userCredential.user;
         console.log("success ", user);
         navigate("/");
       })
       .catch((error) => {
+        // gagal
         const errorCode = error.code;
         const errorMessage = error.message;
         alert("errorMessage");
         console.log(errorCode, errorMessage);
       });
-  }
+  };
+
+  // login menggunakan akun google
+  const handleGoogle = (e) => {
+    e.preventDefault();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // berhasil
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        // gagal
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
 
   return (
     <>
@@ -61,6 +87,13 @@ function LoginPage() {
                   onClick={login}
                 >
                   Kirim
+                </button>
+                <button
+                  className="text-muted py-2 w-100 rounded"
+                  onClick={handleGoogle}
+                >
+                  <img src={google} alt="google" width={25} /> Sign in with
+                  Google
                 </button>
               </form>
               <p className="mt-2 text-center">
