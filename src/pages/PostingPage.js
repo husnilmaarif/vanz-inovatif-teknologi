@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AddList from "../components/AddList";
 import ShowList from "../components/ShowList";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function PostingPage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+      } else {
+        navigate("/login");
+      }
+    });
+  });
+
   return (
     <>
       <div className="container-fluid">

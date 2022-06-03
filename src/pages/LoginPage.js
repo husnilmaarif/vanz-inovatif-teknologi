@@ -88,11 +88,12 @@ function LoginPage() {
                 >
                   Kirim
                 </button>
+                atau
                 <button
-                  className="text-muted py-2 w-100 rounded"
+                  className="text-muted mt-3 py-2 w-100 rounded"
                   onClick={handleGoogle}
                 >
-                  <img src={google} alt="google" width={25} /> Sign in with
+                  <img src={google} className='me-2' alt="google" width={25} /> Sign in with
                   Google
                 </button>
               </form>
