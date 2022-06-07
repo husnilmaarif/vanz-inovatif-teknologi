@@ -6,7 +6,7 @@ const listSlice = createSlice({
   initialState: { value: listData },
   reducers: {
     addList: (state, action) => {
-      state.value.push(action.payload);
+      state.value.unshift(action.payload);
     },
     // updateList: (state, action) => {
     //   state.value.map((user) => {
@@ -16,7 +16,12 @@ const listSlice = createSlice({
     //   });
     // },
     deleteList: (state, action) => {
-      state.value = state.value.filter((user) => user.id !== action.payload.id);
+      if (window.confirm("yakin?")) {
+        alert("data berhasil dihapus");
+        state.value = state.value.filter(
+          (user) => user.id !== action.payload.id
+        );
+      }
     },
   },
 });

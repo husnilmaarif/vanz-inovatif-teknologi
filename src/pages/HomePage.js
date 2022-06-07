@@ -8,15 +8,14 @@ import { auth } from "../config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 function HomePage() {
-  const [email, setEmail] = useState("");
   const [google, setGoogle] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log(user);
-        setEmail(user.email);
         setGoogle(user.displayName);
       } else {
         navigate("/login");
@@ -30,8 +29,6 @@ function HomePage() {
         <button className="text-light greeting btn-primary me-4">
           Selamat Datang {google}
         </button>
-        <br />
-        <button>{email}</button>
       </div>
 
       <div className="container py-4">

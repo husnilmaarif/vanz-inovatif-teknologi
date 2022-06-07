@@ -58,9 +58,12 @@ function Navigasi() {
                   Login
                 </Link>
               </Nav.Link>
-            <Button className="text-light justify-content-center btn-danger" onClick={logout}>
-              Logout
-            </Button>
+              <Button
+                className="text-light justify-content-center btn-danger"
+                onClick={logout}
+              >
+                Logout
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -68,6 +68,7 @@ function LoginPage() {
               <h1 className="text-center">Login</h1>
 
               <form className="mt-3">
+                <p className="text-muted text-start paragraf-login"><i>*kami menyarankan signin menggunakan akun google</i></p>
                 <input
                   type="email"
                   placeholder="email@example.com"
@@ -93,8 +94,8 @@ function LoginPage() {
                   className="text-muted mt-3 py-2 w-100 rounded"
                   onClick={handleGoogle}
                 >
-                  <img src={google} className='me-2' alt="google" width={25} /> Sign in with
-                  Google
+                  <img src={google} className="me-2" alt="google" width={25} />{" "}
+                  Sign in with Google
                 </button>
               </form>
               <p className="mt-2 text-center">
