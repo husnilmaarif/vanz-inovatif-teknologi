@@ -3,7 +3,10 @@ import { listData } from "../listData";
 
 const listSlice = createSlice({
   name: "lists",
-  initialState: { value: listData },
+  initialState: {
+    value: listData,
+    isAuth: false,
+  },
   reducers: {
     addList: (state, action) => {
       state.value.unshift(action.payload);
@@ -16,8 +19,16 @@ const listSlice = createSlice({
         );
       }
     },
+    isAuthLogin: (state) => {
+      // console.log(state.isAuth);
+      state.isAuth = true;
+    },
+    isLogOut: (state) => {
+      state.isAuth = false;
+      console.log(state.isAuth);
+    },
   },
 });
 
-export const { addList, deleteList } = listSlice.actions; // updateList
+export const { addList, deleteList, isAuthLogin, isLogOut } = listSlice.actions; // updateList
 export default listSlice.reducer;

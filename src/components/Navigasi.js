@@ -1,22 +1,24 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import logo from "../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { isLogOut, isAuthLogin } from "../features/listSlice";
 
 function Navigasi() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // const { isLogOut } = useSelector((state) => state.lists);
+  // const { isAuth } = useSelector((state) => state.lists);
 
   // loguot
   const logout = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/login");
-      })
-      .catch((error) => {
-        console.log(error.code, error.message);
-      });
+    signOut(auth).then(() => {
+      dispatch(isLogOut());
+      navigate("/login");
+    });
   };
 
   return (
@@ -53,17 +55,26 @@ function Navigasi() {
                   Posting
                 </Link>
               </Nav.Link>
-              <Nav.Link className="nav-link">
-                <Link to={"/login"} className="link-navigasi">
-                  Login
-                </Link>
-              </Nav.Link>
-              <Button
+              {!isAuthLogin ? (
+                <Nav.Link className="nav-link">
+                  <Link to={"/login"} className="link-navigasi">
+                    Login
+                  </Link>
+                </Nav.Link>
+              ) : (
+                <Button
+                  className="text-light justify-content-center btn-danger"
+                  onClick={logout}
+                >
+                  Logout
+                </Button>
+              )}
+              {/* <Button
                 className="text-light justify-content-center btn-danger"
                 onClick={logout}
               >
                 Logout
-              </Button>
+              </Button> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
