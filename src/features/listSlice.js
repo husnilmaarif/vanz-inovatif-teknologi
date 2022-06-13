@@ -8,13 +8,6 @@ const listSlice = createSlice({
     addList: (state, action) => {
       state.value.unshift(action.payload);
     },
-    // updateList: (state, action) => {
-    //   state.value.map((user) => {
-    //     if (user.id === action.payload.id) {
-    //       user.username = action.payload.username;
-    //     }
-    //   });
-    // },
     deleteList: (state, action) => {
       if (window.confirm("yakin?")) {
         alert("data berhasil dihapus");

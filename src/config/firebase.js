@@ -17,13 +17,3 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 
-// =================================================
-// sign out
-// import { getAuth, signOut } from "firebase/auth";
-
-// const auth = getAuth();
-// signOut(auth).then(() => {
-// Sign-out successful.
-// }).catch((error) => {
-// An error happened.
-// });
