@@ -12,15 +12,14 @@ const listSlice = createSlice({
       state.value.unshift(action.payload);
     },
     deleteList: (state, action) => {
-      if (window.confirm("yakin?")) {
-        alert("data berhasil dihapus");
+      if (window.confirm("yakin ingin menghapus item?")) {
         state.value = state.value.filter(
           (user) => user.id !== action.payload.id
         );
       }
     },
     isAuthLogin: (state) => {
-      // console.log(state.isAuth);
+      console.log(state.isAuth);
       state.isAuth = true;
     },
     isLogOut: (state) => {
