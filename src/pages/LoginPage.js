@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import {
   signInWithEmailAndPassword,
@@ -7,7 +6,6 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
-import { isAuthLogin } from "../features/listSlice";
 import google from "../assets/search.png";
 
 const provider = new GoogleAuthProvider();
@@ -16,8 +14,6 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  // const { isAuth } = useSelector((state) => state.lists);
 
   const login = (e) => {
     e.preventDefault();
@@ -29,8 +25,6 @@ function LoginPage() {
         alert("Berhasil masuk");
         const user = userCredential.user;
         console.log("success ", user);
-        console.log(isAuthLogin);
-        dispatch(isAuthLogin());
         navigate("/");
       })
       .catch((error) => {
@@ -51,8 +45,6 @@ function LoginPage() {
         // berhasil
         const user = result.user;
         console.log(user);
-        console.log(isAuthLogin);
-        dispatch(isAuthLogin());
         navigate("/");
       })
       .catch((error) => {

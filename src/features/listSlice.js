@@ -18,16 +18,8 @@ const listSlice = createSlice({
         );
       }
     },
-    isAuthLogin: (state) => {
-      console.log(state.isAuth);
-      state.isAuth = true;
-    },
-    isLogOut: (state) => {
-      state.isAuth = false;
-      console.log(state.isAuth);
-    },
   },
 });
 
-export const { addList, deleteList, isAuthLogin, isLogOut } = listSlice.actions; // updateList
+export const { addList, deleteList } = listSlice.actions; // updateList
 export default listSlice.reducer;

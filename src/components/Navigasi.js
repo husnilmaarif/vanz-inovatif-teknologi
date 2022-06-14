@@ -1,22 +1,29 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
-import { isLogOut, isAuthLogin } from "../features/listSlice";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Navigasi() {
+  const [user, setUser] = useState(false);
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  // const { isLogOut } = useSelector((state) => state.lists);
-  // const { isAuth } = useSelector((state) => state.lists);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(true);
+      } else {
+        setUser(false);
+      }
+    });
+  });
 
   // loguot
   const logout = () => {
     signOut(auth).then(() => {
-      dispatch(isLogOut());
       navigate("/login");
     });
   };
@@ -55,7 +62,7 @@ function Navigasi() {
                   Posting
                 </Link>
               </Nav.Link>
-              {!isAuthLogin ? (
+              {!user ? (
                 <Nav.Link className="nav-link">
                   <Link to={"/login"} className="link-navigasi">
                     Login
@@ -69,12 +76,6 @@ function Navigasi() {
                   Logout
                 </Button>
               )}
-              {/* <Button
-                className="text-light justify-content-center btn-danger"
-                onClick={logout}
-              >
-                Logout
-              </Button> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
