@@ -63,16 +63,13 @@ function Navigasi() {
                 </Link>
               </Nav.Link>
               {!user ? (
-                <Nav.Link className="nav-link">
-                  <Link to={"/login"} className="link-navigasi">
+                <Button>
+                  <Link to={"/login"} className="link-navigasi text-light btn-primary">
                     Login
                   </Link>
-                </Nav.Link>
+                </Button>
               ) : (
-                <Button
-                  className="text-light justify-content-center btn-danger"
-                  onClick={logout}
-                >
+                <Button className="text-light btn-danger" onClick={logout}>
                   Logout
                 </Button>
               )}
