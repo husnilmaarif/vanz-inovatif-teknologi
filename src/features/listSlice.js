@@ -5,7 +5,6 @@ const listSlice = createSlice({
   name: "lists",
   initialState: {
     value: listData,
-    isAuth: false,
   },
   reducers: {
     addList: (state, action) => {
